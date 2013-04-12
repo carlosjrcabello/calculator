@@ -1,7 +1,9 @@
 *Simple Java class for daily math operations.
 
 ```java
-Double val = Calculator.positivefy();
+Double negative = new Double(-100);
+
+Double val = Calculator.positivefy(negative);
 
 Double val = new Double(-1);
 
