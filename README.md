@@ -7,7 +7,11 @@ Double val = Calculator.positivefy(negative);
 
 Double val = new Double(-1);
 
-if(Calculator.isPositive()){
+if(Calculator.isPositive(val)){
+   // ...
+}
+
+if(Calculator.isNegative(val)){
    // ...
 }
 
