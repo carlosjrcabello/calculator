@@ -1,15 +1,7 @@
 #Calculator
 
-Simplify your math ops with this simple DSL.
+Simplify your math ops with this simple DSL. Forget all ugly ways to make your daily calcs and use a _verbal way_.
 
-```java
-// Ugly mode.
-Double val = new Double(1234);
-
-int compare = val.compareTo(target);
-
-// aaahhhhhh!!!
-```
 ###Commons comparisons
 
 All methods has been based on *EL spec* to keep a natural usage on both.
@@ -60,7 +52,7 @@ if(Calculator.isNegative(val)){
 ```
 ### Fast inversions
 
-If you need invert values, forgot the classic ```Double arg = target * (-1)```....
+If you need invert values, forget the classic ```Double arg = target * (-1)```....
 
 ```java
 Double positive = Calculator.positivefy(val);
