@@ -1,24 +1,27 @@
-*Simple Java class for daily math operations.
+#Calculator
+
+Simplify your math ops with this simple DSL.
 
 ```java
-Double negative = new Double(-100);
+// Ugly mode.
+Double val = new Double(1234);
 
-Double val = Calculator.positivefy(negative);
+int compare = val.compareTo(target);
 
-Double val = new Double(-1);
+// aaahhhhhh!!!
+```
+###Commons comparisons
 
-if(Calculator.isPositive(val)){
-   // ...
+```java
+if(Calculator.gt(val, target)){
+	// is greater than.
 }
 
-if(Calculator.isNegative(val)){
-   // ...
+if(Calculator.lt(val, target)){
+	// is less than.
 }
 
-Double eq1 = new Double(1);
-Double eq2 = new Double(2);
-
-if(Calculator.isSame(eq1, eq2){
-   // ...
+if(Calculator.ne(val, target)){
+	// is not equals.
 }
 ```
