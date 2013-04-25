@@ -14,6 +14,8 @@ public class CalculatorTest {
 		Double b = 20D;
 
 		assertTrue(Calculator.gt(b, a));
+		
+		System.out.println("Calculator.minus(2.93939D, 3D, 2); " + Calculator.minus(2.93939D, 3D, 2));
 	}
 	
 	@Test
