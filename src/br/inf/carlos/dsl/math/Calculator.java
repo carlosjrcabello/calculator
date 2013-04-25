@@ -4,6 +4,14 @@ import java.math.BigDecimal;
 
 public class Calculator {
 	
+	public static boolean isZero(Double value){
+		return value.doubleValue() == 0;
+	}
+	
+	public static boolean isNull(Double value){
+		return value == null;
+	}
+	
 	public static boolean isNegative(Double value){
 		return value.doubleValue() < 0;
 	}
@@ -34,10 +42,40 @@ public class Calculator {
 		return value;
 	}
 	
-	public static boolean greaterThen(Double thiz, Double with){
-		int compareTo = thiz.compareTo(with);
-		
-		return compareTo > 0;
+	//the value 0 if anotherDouble is numerically equal to this Double; 
+	//a value less than 0 if this Double is numerically less than anotherDouble; 
+	//and a value greater than 0 if this Double is numerically greater than anotherDouble.
+	
+	public static boolean le(Double thiz, Double with){
+		return ( lt(thiz, with) || eq(thiz, with) );
+	}
+	
+	public static boolean ge(Double thiz, Double with){
+		return (gt(thiz, with) || eq(thiz, with));
+	}
+	
+	public static boolean gt(Double thiz, Double with){
+		return compator(thiz, with) > 0;
+	}
+	
+	public static boolean lt(Double thiz, Double with){
+		return compator(thiz, with) < 0;
+	}
+	
+	public static boolean eq(Double thiz, Double with){
+		return compator(thiz, with) == 0;
+	}
+	
+	public static boolean ne(Double thiz, Double with){
+		return !eq(thiz, with);
+	}
+	
+	private static int compator(Double thiz, Double with){
+		return thiz.compareTo(with);
+	}
+	
+	public static int mod(Double thiz, Double with){
+		return (int) (thiz % with);
 	}
 	
 	private static Double round(Double value, int fixed){
