@@ -1,8 +1,24 @@
 package br.inf.carlos.dsl.math;
 
 import java.math.BigDecimal;
+import java.util.Collection;
 
 public class Calculator {
+	
+	public static Double sum(Collection<Double> values, int fixed){
+		if(values == null || values.isEmpty()){
+			return 0D;
+		}
+		Double result = 0D;
+		for (Double d : values) {
+			result = add(result, d);
+		}
+		return round(result, fixed);
+	}
+	
+	public static Double sum(Collection<Double> values){
+		return sum(values, 2);
+	}
 	
 	public static boolean isZero(Double value){
 		return value.doubleValue() == 0;
@@ -24,6 +40,10 @@ public class Calculator {
 		return thiz.doubleValue() == with.doubleValue();
 	}
 	
+	public static Double doubleOf(Integer value){
+		return new Double(value);
+	}
+	
 	public static Double negativefy(Double value){
 		
 		if(value.doubleValue() > 0){
@@ -33,10 +53,30 @@ public class Calculator {
 		return value;
 	}
 	
+	public static Integer negativefy(Integer value){
+		return new Integer(negativefy(value.doubleValue()).intValue());
+	}
+	
+	public static Integer positivefy(Integer value){
+		return new Integer(positivefy(value.doubleValue()).intValue());
+	}
+	
 	public static Double positivefy(Double value){
 		
 		if(value.doubleValue() < 0){
 			return multiply(value, -1, 2);
+		}
+		
+		return value;
+	}
+	
+	public static Double invert(Double value){
+		
+		if(isPositive(value)){
+			value = negativefy(value);
+		}
+		else{
+			value = positivefy(value);
 		}
 		
 		return value;

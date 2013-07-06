@@ -3,9 +3,34 @@ package br.inf.carlos.dsl.math;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import org.junit.Test;
 
 public class CalculatorTest {
+	
+	@Test
+	public void sumCollection() {
+		Collection<Double> values = new ArrayList<Double>(0);
+		
+		values.add(new Double(10));
+		values.add(new Double(20));
+		values.add(new Double(13.948));
+		values.add(new Double(4.935));
+		
+		values.add(new Double(99));
+		values.add(new Double(-4));
+		values.add(new Double(46.2443222));
+		
+		Double result = Calculator.sum(values);
+		
+		System.out.println(result);
+		
+		Double result2 = Calculator.sum(values, 3);
+		
+		System.out.println(result2);
+	}
 
 	@Test
 	public void gtTest() {
