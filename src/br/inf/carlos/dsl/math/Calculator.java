@@ -16,6 +16,14 @@ public class Calculator {
 		return round(result, fixed);
 	}
 	
+	public static Double valuePerHour(Double hourValue, Integer minutesWorked){
+		if(isNull(hourValue) || minutesWorked == null || isZero(hourValue)){
+			return 0D;
+		}
+		
+		return divide(hourValue, 60D) * minutesWorked;
+	}
+	
 	public static Double sum(Collection<Double> values){
 		return sum(values, 2);
 	}
