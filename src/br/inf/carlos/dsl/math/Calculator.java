@@ -20,8 +20,8 @@ public class Calculator {
 		if(isNull(hourValue) || minutesWorked == null || isZero(hourValue)){
 			return 0D;
 		}
-		
-		return divide(hourValue, 60D) * minutesWorked;
+		Double minuteValue = divide(hourValue, 60D, 8);
+		return minuteValue * minutesWorked.intValue();
 	}
 	
 	public static Double sum(Collection<Double> values){
